@@ -1,0 +1,8 @@
+USE company_db;
+START TRANSACTION;
+INSERT INTO employees VALUES(5,'Rohit',42000,2);
+SAVEPOINT sp1;
+INSERT INTO employees VALUES(6,'Neha',38000,3);
+ROLLBACK TO sp1;
+COMMIT;
+SELECT * FROM employees;
